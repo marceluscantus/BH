@@ -1,0 +1,10 @@
+<dl>
+  <dt>Fabricante</dt>
+  <dd><%= @manufacturer.company_name %></dd>
+  <dt>Ciudad</dt>
+  <dd><%= @manufacturer.city %></dd>
+</dl>
+
+<%= link_to 'Editar', :action => 'edit', :id => @manufacturer %> |
+<%= link_to 'Atrás', :action => 'index' %>
+

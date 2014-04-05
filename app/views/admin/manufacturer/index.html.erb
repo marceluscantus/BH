@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th>Fabricante</th>
+    <th>Editar</th>
+    <th>Borrar</th>
+  </tr>
+
+  <%= render :partial => 'manufacturer', :collection => @manufacturers %>
+</table>
+
+<p><%= link_to 'Añade un nuevo Fabricante', :action => 'new' %></p>
