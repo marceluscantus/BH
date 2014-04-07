@@ -25,8 +25,12 @@ class Admin::ManufacturerController < ApplicationController
   end
 
   def show
+      @manufacturer = Manufacturer.find(params[:id])
+      @page_title = @manufacturer.name
   end
 
   def index
+       @manufacturers = Manufacturer.find(:all)
+       @page_title = 'Listando Fabricantes'
   end
 end

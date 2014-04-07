@@ -2,16 +2,15 @@ BH::Application.routes.draw do
 
   match 'admin/manufacturer' => 'admin/manufacturer#index'
   
-  get "admin/manufacturer/new"
-  post "admin/manufacturer/create"
-  get "admin/manufacturer/edit"
-  post "admin/manufacturer/update"
-  post "admin/manufacturer/destroy"
-  get "admin/manufacturer/show"
+  get 'admin/manufacturer/new'
+  post 'admin/manufacturer/create'
+  get 'admin/manufacturer/edit'
+  post 'admin/manufacturer/update'
+  post 'admin/manufacturer/destroy'
+  get 'admin/manufacturer/show'
   match 'admin/manufacturer/show/:id' => 'admin/manufacturer#show'
-  get "admin/manufacturer/index"
   get 'admin/manufacturer/index'
-
+  
   get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

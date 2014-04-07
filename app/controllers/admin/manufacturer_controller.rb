@@ -16,12 +16,26 @@ class Admin::ManufacturerController < ApplicationController
   end
 
   def edit
+      @manufacturer = Manufacturer.find(params[:id])
+      @page_title = 'Editar Fabricante'
   end
 
   def update
+      @manufacturer = Manufacturer.find(params[:id])
+    if @manufacturer.update_attributes(params[:manufacturer])
+      flash[:notice] = "El Fabricante #{@manufacturer.name} ha sido actualizado."
+      redirect_to :action => 'show', :id => @manufacturer
+    else
+      @page_title = 'Editar Fabricante'
+      render :action => 'edit'
+    end
   end
 
   def destroy
+      @manufacturer = Manufacturer.find(params[:id])
+      @manufacturer.destroy
+      flash[:notice] = "Se ha eliminado el Fabricante #{@manufacturer.name}."
+      redirect_to :action => 'index'
   end
 
   def show

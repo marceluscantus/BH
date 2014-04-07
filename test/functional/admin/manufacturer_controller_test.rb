@@ -39,19 +39,30 @@ class Admin::ManufacturerControllerTest < ActionController::TestCase
     end
   end
   
-  test "should get edit" do
-    get :edit
-    assert_response :success
+  test "edit" do
+    get :edit, :id => 1
+    assert_tag :tag => 'input', :attributes => { :name => 'manufacturer[company_name]',:value => 'Arnette' }
+    assert_tag :tag => 'input', :attributes => { :name => 'manufacturer[city]', :value => 'California' }
   end
 
-  test "should get update" do
-    get :update
-    assert_response :success
+  test "update" do
+    post :update, :id => 1, :manufacturer => { :company_name => 'Arnete', :city => 'California' }
+    assert_response :redirect
+    assert_redirected_to :action => 'show', :id => 1
+    assert_equal 'Arnete', Manufacturer.find(1).company_name
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
+  test "destroy" do
+    assert_difference(Manufacturer, :count, -1) do
+      post :destroy, :id => 1
+      assert_equal flash[:notice], 'Se ha eliminado el Fabricante Arnette.'
+      assert_response :redirect
+      assert_redirected_to :action => 'index'
+      get :index
+      assert_response :success
+      assert_tag :tag => 'div', :attributes => {:id => 'notice'},
+        :content => 'Se ha eliminado el Fabricante Arnette.'
+    end
   end
 
   test "show" do
