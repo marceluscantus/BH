@@ -10,7 +10,7 @@ BH::Application.routes.draw do
   get 'admin/manufacturer/show'
   match 'admin/manufacturer/show/:id' => 'admin/manufacturer#show'
   get 'admin/manufacturer/index'
-  delete 'admin/manufacturer/destroy'
+  
   get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

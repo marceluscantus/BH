@@ -65,9 +65,9 @@ BH::Application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-     namespace :admin do
+  #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-       resources :manufacturer
-     end
+  #     resources :manufacturer
+  #   end
 end

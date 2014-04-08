@@ -1,8 +1,7 @@
 <tr>
   <td><%= link_to manufacturer.company_name, :action => 'show', :id => manufacturer %></td>
-  <td><%= button_to 'Editar', :action => 'edit', :id => manufacturer %></td>
+  <td><%= link_to 'Editar', :action => 'edit', :id => manufacturer %></td>
   <td>
-    <%= button_to 'Borrar', { :action=> 'destroy', :id=> manufacturer}, :method => :delete,
-        :confirm => "¿Está seguro que desea eliminar al fabricante #{manufacturer.name}?" %>
+    <%= button_to 'Borrar', {:action=> 'destroy', :id=> manufacturer}, :confirm => "¿Está seguro que desea eliminar al fabricante #{manufacturer.name}?" %>
   </td>
 </tr>
