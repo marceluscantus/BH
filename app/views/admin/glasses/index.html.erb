@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th>Gafas</th>
+    <th>Editar</th>
+    <th>Borrar</th>
+  </tr>
+
+  <%= render :partial => 'glasses', :collection => @glasses %>
+</table>
+
+<p><%= link_to 'Añade unas nuevas Gafas', :action => 'new' %></p>

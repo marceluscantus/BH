@@ -1,5 +1,6 @@
 BH::Application.routes.draw do
 
+  match 'admin/glasses' => 'admin/glasses#index'  
   match 'admin/manufacturer' => 'admin/manufacturer#index'
   
   get 'admin/manufacturer/new'
@@ -10,6 +11,15 @@ BH::Application.routes.draw do
   get 'admin/manufacturer/show'
   match 'admin/manufacturer/show/:id' => 'admin/manufacturer#show'
   get 'admin/manufacturer/index'
+
+  get 'admin/glasses/new'
+  post 'admin/glasses/create'
+  get 'admin/glasses/edit'
+  post 'admin/glasses/update'
+  post 'admin/glasses/destroy'
+  get 'admin/glasses/show'
+  match 'admin/glasses/show/:id' => 'admin/glasses#show'
+  get 'admin/glasses/index'
   
   get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.
