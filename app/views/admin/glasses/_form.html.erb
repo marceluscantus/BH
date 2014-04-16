@@ -1,0 +1,30 @@
+<% if @glasses.errors.any? %>
+<div id="errorExplanation">
+  <h2><%= pluralize(@glasses.errors.count, "error") %> Ha sido imposible almacenar estas gafas:</h2>
+  <ul>
+    <% @glasses.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="field">
+<p><label for="glasses_glasses_name">Nombre</label><br/>
+<%= text_field 'glasses', 'glasses_name' %></p>
+</div>
+<div class="field">
+<p><label for="glasses_price">Precio</label><br/>
+<%= text_field 'glasses', 'price' %></p>
+</div>
+<div class="field">
+<p><label for="glasses_image">Imagen</label><br/>
+<%= text_field 'glasses', 'image' %></p>
+</div>
+<div class="field">
+<p><label for="glasses_manufacturer">Fabricante</label><br/>
+<%= text_field 'glasses', 'manufacturer' %></p>
+</div>
+<div class="field">
+<p><label for="glasses_description">Descripción</label><br/>
+<%= text_field 'glasses', 'description' %></p>
+</div>

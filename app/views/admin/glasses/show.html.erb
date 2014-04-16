@@ -1,0 +1,16 @@
+<dl>
+  <dt>Nombre</dt>
+  <dd><%= @glasses.name %></dd>
+  <dt>Precio</dt>
+  <dd><%= @glasses.price %></dd>
+  <dt>Imagen</dt>
+  <dd><%= @glasses.image %></dd>
+  <dt>Fabricante</dt>
+  <dd><%= @glasses.manufacturer %></dd>
+  <dt>Descripcion</dt>
+  <dd><%= @glasses.description %></dd>
+</dl>
+
+<%= link_to 'Editar', :action => 'edit', :id => @glasses %> |
+<%= link_to 'Atrás', :action => 'index' %>
+
