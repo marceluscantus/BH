@@ -14,9 +14,16 @@
 ActiveRecord::Schema.define(:version => 20140415235812) do
 
   create_table "glasses", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "glasses_name",    :null => false
+    t.string   "description"
+    t.float    "price"
+    t.string   "image"
+    t.integer  "manufacturer_id", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "glasses", ["manufacturer_id"], :name => "fk_glasses_manufacturers"
 
   create_table "manufacturers", :force => true do |t|
     t.string   "company_name"
