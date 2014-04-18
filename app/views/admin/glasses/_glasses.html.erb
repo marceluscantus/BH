@@ -2,6 +2,6 @@
   <td><%= link_to glasses.glasses_name, :action => 'show', :id => glasses %></td>
   <td><%= link_to 'Editar', :action => 'edit', :id => glasses %></td>
   <td>
-    <%= button_to 'Delete', {:action => 'destroy', :id => glasses}, :confirm => "Are you sure you want to delete glasses #{glasses.name}?" %>
+    <%= button_to 'Borrar', {:action => 'destroy', :id => glasses}, :confirm => "¿Seguro que desea eliminar las gafas #{glasses.name}?" %>
   </td>
 </tr>

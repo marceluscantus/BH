@@ -21,8 +21,8 @@
 <%= text_field 'glasses', 'image' %></p>
 </div>
 <div class="field">
-<p><label for="glasses_manufacturer">Fabricante</label><br/>
-<%= text_field 'glasses', 'manufacturer' %></p>
+  <p><label for="glasses_manufacturer">Fabricantes</label><br/>
+  <%= collection_select :glasses, :manufacturer_id, @manufacturers, :id, :company_name %></p>
 </div>
 <div class="field">
 <p><label for="glasses_description">Descripción</label><br/>
