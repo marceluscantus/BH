@@ -1,0 +1,9 @@
+<dl id = 'glasses'>
+  <% for glasses in @glasses %>
+    <dt><%= link_to glasses.name, :action => 'show', :id => glasses %>
+    <%= link_to '+', :controller => 'cart', :action => 'add', :id => book unless !@cart %></dt>
+    <dd><%= glasses.price %></dd>
+    <dd><%= glasses.manufacturer.company_name %></dd>
+    <dd><%= glasses.description %></dd>
+  <% end %>
+</dl>
