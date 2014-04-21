@@ -14,6 +14,6 @@ class CatalogController < ApplicationController
   
   def latest
     @glasses = Glasses.latest 5 # invoca al metodo "lastest" para sacar los cinco ultimos libros
-    @page_title = "Últimos modelos"
+    @page_title = "Ultimos modelos"
   end
 end
