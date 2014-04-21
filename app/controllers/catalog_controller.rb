@@ -1,6 +1,5 @@
 class CatalogController < ApplicationController
-  before_filter :initialize_cart, :except => [:show, :latest]
-  before_filter :require_no_user
+  before_filter :except => [:show, :latest]
   
   def show
     @glasses = Glasses.find(params[:id])
