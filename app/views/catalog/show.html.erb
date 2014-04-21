@@ -1,0 +1,18 @@
+<h2>by <%=@glasses.name %></h2>
+<% if @glasses.image.exists? then %>
+    <dd><%= image_tag @glasses.image.url(:thumb) %></dd>
+  <% else %>
+    <p>Imagen no disponible.</p>
+<% end %>
+<dl>
+  <dt>Nombre</dt>
+  <dd><%= @glasses.name %></dd>
+  <dt>Precio</dt>
+  <dd><%= @glasses.price %></dd>
+  <dt>Fabricante</dt>
+  <dd><%= @glasses.manufacturer.name %></dd>
+  <dt>Descripcion</dt>
+  <dd><%= @glasses.description %></dd>
+</dl>
+
+<p><%= link_to 'Catálogo', :action => 'index' %> </p>
