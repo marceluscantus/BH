@@ -1,6 +1,8 @@
 class CatalogController < ApplicationController
+
   before_filter :except => [:show, :latest]
-  
+
+
   def show
     @glasses = Glasses.find(params[:id])
     @page_title = @glasses.name
