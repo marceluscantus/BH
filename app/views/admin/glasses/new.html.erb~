@@ -1,4 +1,4 @@
-<%= form_tag "/admin/glasses/create?id=#{@glasses.id}", :multipart => true do %>
+<%= form_tag :action => 'create', :multipart => truedo %>
 <%= render :partial => 'form' %>
 <%= submit_tag 'Crear' %>
 <% end %>

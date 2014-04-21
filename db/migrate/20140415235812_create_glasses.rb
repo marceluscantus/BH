@@ -4,7 +4,6 @@ class CreateGlasses < ActiveRecord::Migration
     	t.column :glasses_name, :string, :limit => 255, :null => false
      	t.column :description, :string, :limit=> 255
      	t.column :price, :float
-     	t.column :image, :string, :limit => 255
      	t.column :manufacturer_id, :integer, :null => false
         t.timestamps
     end

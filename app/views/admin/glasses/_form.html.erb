@@ -8,22 +8,32 @@
   </ul>
 </div>
 <% end %>
+
 <div class="field">
 <p><label for="glasses_glasses_name">Nombre</label><br/>
 <%= text_field 'glasses', 'glasses_name' %></p>
 </div>
+
 <div class="field">
 <p><label for="glasses_price">Precio</label><br/>
 <%= text_field 'glasses', 'price' %></p>
 </div>
+
 <div class="field">
 <p><label for="glasses_image">Imagen</label><br/>
-<%= text_field 'glasses', 'image' %></p>
+<% if @glasses.image.exists? then %>
+  <dd><%= image_tag @glasses.image.url %></dd>
+<% else %>
+  <p> Introduce una imagen de las gafas. </p>
+<% end %>
+<%= file_field 'glasses', :image %></p>
 </div>
+
 <div class="field">
   <p><label for="glasses_manufacturer">Fabricantes</label><br/>
   <%= collection_select :glasses, :manufacturer_id, @manufacturers, :id, :company_name %></p>
 </div>
+
 <div class="field">
 <p><label for="glasses_description">Descripción</label><br/>
 <%= text_field 'glasses', 'description' %></p>

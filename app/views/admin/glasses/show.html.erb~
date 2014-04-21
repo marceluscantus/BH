@@ -9,7 +9,7 @@
   <dd><%= @glasses.description %></dd>
   <dt>Imagen</dt>
   <% if @glasses.image.exists? then %>
-    <dd><%= image_tag @glasses.image.url(:large) %></dd>
+    <dd><%= image_tag @glasses.image.url(:thumb) %></dd>
   <% else %>
   <dd><%= image_tag '/missing.png' %></dd>
   <p> No hay imagen. Por favor, sube una. </p>
