@@ -22,7 +22,7 @@
 <div class="field">
 <p><label for="glasses_image">Imagen</label><br/>
 <% if @glasses.image.exists? then %>
-  <dd><%= image_tag @glasses.image.url(:large) %></dd>
+  <dd><%= image_tag @glasses.image.url %></dd>
 <% else %>
   <p> Introduce una imagen de las gafas. </p>
 <% end %>
