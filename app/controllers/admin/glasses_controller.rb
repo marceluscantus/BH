@@ -48,7 +48,8 @@ class Admin::GlassesController < ApplicationController
   end
 
   def index
-    @glasses    = Glasses.find(:all)
+    sorter_by = params[:sort_by]
+    @glasses    = Glasses.paginate :page => params[:page], :order => sort_by, :per_page => 5
     @page_title = 'Listando Gafas'
   end
   

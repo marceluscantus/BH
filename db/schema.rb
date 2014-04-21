@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20140420131844) do
     t.string   "glasses_name",       :null => false
     t.string   "description"
     t.float    "price"
+    t.string   "image"
     t.integer  "manufacturer_id",    :null => false
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
