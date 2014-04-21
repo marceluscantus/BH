@@ -3,7 +3,7 @@ class Manufacturer < ActiveRecord::Base
   has_many :glasses
   attr_accessible :company_name, :city, :telephone, :mail, :address
   validates_presence_of :company_name
-
+  validates_uniqueness_of :company_name
   def name
       "#{company_name}"
   end
