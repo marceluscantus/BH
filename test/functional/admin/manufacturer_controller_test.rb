@@ -60,7 +60,7 @@ class Admin::ManufacturerControllerTest < ActionController::TestCase
       assert_redirected_to :action => 'index'
       get :index
       assert_response :success
-      assert_tag :tag => 'div', :attributes => {:id => 'notice'},
+      assert_tag :tag => 'div', :attributes => {:class => "alert fade in alert-success alert-dismissable"},
         :content => 'Se ha eliminado el Fabricante Arnette.'
     end
   end

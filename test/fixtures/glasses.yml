@@ -1,11 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+radial:
+  id: 1
+  glasses_name: Radial
+  price: 45.0
+  manufacturer_id: 1
+  created_at: <%= Time.now.strftime("%Y-%m-%d") %>
+  updated_at: <%= Time.now.strftime("%Y-%m-%d") %>
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
