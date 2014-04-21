@@ -21,6 +21,11 @@ BH::Application.routes.draw do
   match 'admin/glasses/show/:id' => 'admin/glasses#show'
   get 'admin/glasses/index'
   
+  get 'catalog/show'
+  match 'catalog/show/:id' => 'catalog#show'
+  get 'catalog/index'
+  get 'catalog/latest'
+  
   get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
