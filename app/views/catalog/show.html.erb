@@ -7,7 +7,7 @@
   <dt>Nombre</dt>
   <dd><%= @glasses.name %></dd>
   <dt>Precio</dt>
-  <dd><%= @glasses.price %></dd>
+  <dd><%= sprintf("%0.2f", @glasses.price) %></dd>
   <dt>Fabricante</dt>
   <dd><%= @glasses.manufacturer.name %></dd>
   <dt>Descripcion</dt>
