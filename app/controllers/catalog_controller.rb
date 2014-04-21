@@ -9,7 +9,7 @@ class CatalogController < ApplicationController
   
   def index
     @glasses = Glasses.paginate :page => params[:page], :order => "glasses.id desc", :per_page => 5, :include => [:manufacturer]
-    @page_title = 'Catálogo'
+    @page_title = 'Catalogo'
   end
   
   def latest
