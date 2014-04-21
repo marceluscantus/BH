@@ -49,7 +49,7 @@ class Admin::GlassesController < ApplicationController
 
   def index
     sorter_by = params[:sort_by]
-    @glasses    = Glasses.paginate :page => params[:page], :order => sort_by, :per_page => 5
+    @glasses    = Glasses.paginate :page => params[:page], :order => sorter_by, :per_page => 5
     @page_title = 'Listando Gafas'
   end
   
