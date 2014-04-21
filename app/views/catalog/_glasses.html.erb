@@ -2,9 +2,9 @@
   <% for glasses in @glasses %>
     <dt><%= link_to glasses.name, :action => 'show', :id => glasses %>
     <%= link_to '+', :controller => 'cart', :action => 'add', :id => book unless !@cart %></dt>
-    <dd><%= image_tag glasses.image.url(:thumb) %></dd>
-    <dd><%= glasses.price %>€</dd>
-    <dd><%= glasses.manufacturer.company_name %></dd>
-    <dd><%= glasses.description %></dd>
+    <dd><%= image_tag glasses.image.url(:thumb) %>
+    <%= glasses.price %>€
+    <%= glasses.manufacturer.company_name %>
+    <%= glasses.description %></dd></br>
   <% end %>
 </dl>
