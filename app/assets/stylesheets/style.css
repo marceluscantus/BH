@@ -1,6 +1,5 @@
-.centro .row{
-  width: 80%;
-  margin-left: 10%;
+.centro{
+  margin-left: 2%;
 }
 .field_with_errors input{
 	border-color: red;
@@ -19,8 +18,8 @@
 #shopping_cart ul,
 #shopping_cart li {
   list-style: none;
-margin: 0;
-padding: 0; }
+  margin: 0;
+  padding: 0; }
 #shopping_cart h3 {
   padding-top: 4em;
 }
@@ -34,5 +33,4 @@ padding: 0; }
 }
 body {
   background-color: #fff; color: #333;
-  margin-right: 230px;
 }
