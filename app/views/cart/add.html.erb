@@ -1,0 +1,9 @@
+<strong>Desea añadir las gafas <em><%= @glasses.name %></em> al carro de la compra?</strong>
+<br><br>
+<div style="float: left; width: auto;">
+<%= button_to 'Cancelar', :controller => 'catalog', :action => 'index' %>
+</div>
+<div style="float: left; width: auto;">
+<%= button_to 'Confirmar', :action => 'add', :id => params[:id] %>
+</div>
+<br>

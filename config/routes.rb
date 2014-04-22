@@ -26,6 +26,13 @@ BH::Application.routes.draw do
   get 'catalog/index'
   get 'catalog/latest'
   
+  get 'cart/add'
+  post 'cart/add'
+  get 'cart/remove'
+  post 'cart/remove'
+  get 'cart/clear'
+  post 'cart/clear'
+  
   get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

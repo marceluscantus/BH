@@ -1,6 +1,8 @@
 class Glasses < ActiveRecord::Base
   attr_accessible :glasses_name, :description, :price, :image, :manufacturer_id
 
+  has_many :cart_items
+  has_many :carts, :through => :cart_items
   belongs_to :manufacturer
 
   #PaperClip

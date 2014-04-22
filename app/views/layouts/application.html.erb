@@ -37,8 +37,8 @@
 
     <%= javascript_include_tag "application" %>
 
-    <!-- <% if @cart || (@page_title && (@page_title.include?('Listing') || @page_title.include?('Displaying'))) %> -->
-	<!--<% end %>-->
+     <% if @cart || (@page_title && (@page_title.include?('Listing') || @page_title.include?('Displaying'))) %>
+     <% end %>
   </head>
   <body>
 
@@ -63,7 +63,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row centro">
         <div class="col-lg-9">
           <h1><%= @page_title if @page_title %></h1>
           <%= bootstrap_flash %>
@@ -74,11 +74,10 @@
           </div>
           <% end %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
+        <div class="col-lg-1">
+          <div class="sidebar-nav">
             <h3>Sidebar</h3>
             <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
               <li><%= link_to "Fabricantes", "/admin/manufacturer"  %></li>
               <li><%= link_to "Gafas", "/admin/glasses"  %></li>
               <li><%= link_to "Pedidos", "/admin/order"  %></li>

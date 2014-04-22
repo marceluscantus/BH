@@ -1,6 +1,6 @@
 # encoding: UTF-8
 class CatalogController < ApplicationController
-
+  before_filter :initialize_cart
   before_filter :except => [:show, :latest]
 
 
