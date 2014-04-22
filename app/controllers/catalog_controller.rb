@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class CatalogController < ApplicationController
 
   before_filter :except => [:show, :latest]
@@ -10,7 +11,7 @@ class CatalogController < ApplicationController
   
   def index
     @glasses = Glasses.paginate :page => params[:page], :order => "glasses.id desc", :per_page => 5, :include => [:manufacturer]
-    @page_title = 'Catalogo'
+    @page_title = 'Catálogo'
   end
   
   def latest

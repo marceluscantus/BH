@@ -1,9 +1,9 @@
 </br><dl id = 'glasses'>
   <% for glasses in @glasses %>
     <dt><%= link_to glasses.name, :action => 'show', :id => glasses %>
-    <%= link_to '+', :controller => 'cart', :action => 'add', :id => book unless !@cart %></dt>
+    <%= link_to '+', :controller => 'cart', :action => 'add', :id => glasses unless !@cart %></dt>
     </br><dd><%= image_tag glasses.image.url(:thumb) %>
-    <pre style='display:inline'><strong><font color="green"><%= sprintf ("%0.2f", glasses.price) %> €</pre></font></strong></dd></br>
+    <pre style='display:inline'><strong><font color="green"> <%= sprintf("%.2f", glasses.price) %> </pre></font></strong></dd></br>
     <dd><%= glasses.manufacturer.company_name %></dd></br>
   <% end %>
 </dl>
