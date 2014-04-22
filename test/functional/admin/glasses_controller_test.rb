@@ -29,7 +29,7 @@ class Admin::GlassesControllerTest < ActionController::TestCase
 
   test "edit" do
     get :edit, :id => 1
-    assert_tag :tag => 'input', :attributes => { :name => 'glasses[name]',
+    assert_tag :tag => 'input', :attributes => { :name => 'glasses[glasses_name]',
                :value => 'Radial' }
   end
 

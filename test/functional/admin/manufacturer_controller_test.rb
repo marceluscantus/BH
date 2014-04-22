@@ -23,11 +23,11 @@ class Admin::ManufacturerControllerTest < ActionController::TestCase
     get :new
     assert_template 'admin/manufacturer/new'
     assert_difference(Manufacturer, :count) do
-    	post :create, :manufacturer => {:company_name => 'Arnette'}
+    	post :create, :manufacturer => {:company_name => 'Melon'}
 	assert_response :redirect
     	assert_redirected_to :action => 'index'
      end
-     assert_equal 'Fabricante Arnette ha sido creado con exito.', flash[:notice]
+     assert_equal 'Fabricante Melon ha sido creado con exito.', flash[:notice]
   end
   
   def test_failing_create
