@@ -12,3 +12,7 @@ rayban:
   id: 2
   company_name: RayBan
   city: Oklahoma
+melon:
+  id: 3
+  company_name: Melon
+  city: Conil
