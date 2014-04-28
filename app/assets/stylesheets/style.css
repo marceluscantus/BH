@@ -31,6 +31,15 @@
   top: 0;
   left: 10px;
 }
+
+#loginout {
+  background: #ccc;
+  padding: 8px;
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
 body {
   background-color: #fff; color: #333;
 }
