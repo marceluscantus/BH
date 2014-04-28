@@ -27,6 +27,8 @@ gem 'twitter-bootstrap3-rails'
 
 gem 'will_paginate', '3.0.3'
 
+gem 'will_paginate-bootstrap'
+
 gem 'formatize', '1.1.0'
 
 gem 'paperclip', '3.3.1'
