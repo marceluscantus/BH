@@ -41,6 +41,10 @@ gem 'activemerchant', '1.31.1'
 
 gem 'eu_central_bank', '0.3.5'
 
+gem 'ferret'
+
+gem 'acts_as_ferret', '>= 0.5'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
