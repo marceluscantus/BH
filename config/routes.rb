@@ -37,6 +37,13 @@ BH::Application.routes.draw do
   get 'cart/clear'
   post 'cart/clear'
   
+  get 'user_session/new'
+  post 'user/create'
+  get 'user/show'
+  match 'user/show/:id' => 'user#show'
+  get 'user/edit'
+  post 'user/update'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
