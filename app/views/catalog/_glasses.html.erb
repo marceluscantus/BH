@@ -4,7 +4,7 @@
     <%= link_to image_tag("cesta.png",  size: "30x30", alt: "Botón para añadir al carro de la compra"), :controller => 'cart', :action => 'add', :id => glasses unless !@cart %></dt>
     </br><dd><%= image_tag glasses.image.url(:thumb) %>
     <pre style='display:inline'><strong><font color="green"> <%= sprintf("%.2f €", glasses.price) %> </pre></font></strong><br>
-    </dd></br>
+    </dd><br>
     <dd><%= glasses.manufacturer.company_name %></dd></br>
   <% end %>
 </dl>
