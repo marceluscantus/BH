@@ -2,4 +2,4 @@
 
 <%= pluralize item.amount, "gafa", "gafas" %>, <%= sprintf "%0.2f €", item.price * item.amount %>
 
-(<%= link_to '<b>-</b>'.html_safe, :controller => 'cart', :action => 'remove', :id => item.glasses %>)
+<%= link_to image_tag("sacardecesta.png",  size: "20x20", alt: "Botón para sacar producto del carro de la compra"), :controller => 'cart', :action => 'remove', :id => item.glasses %>

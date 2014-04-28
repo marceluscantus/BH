@@ -1,6 +1,10 @@
 BH::Application.routes.draw do
 
-  match 'admin/glasses' => 'admin/glasses#index'  
+  root :to => 'catalog#index'
+
+  match 'catalog' => 'catalog#index'
+  match 'admin/glasses' => 'admin/glasses#index'
+  match 'about' => 'about#index'  
   match 'admin/manufacturer' => 'admin/manufacturer#index'
   
   get 'admin/manufacturer/new'
@@ -33,20 +37,15 @@ BH::Application.routes.draw do
   get 'cart/clear'
   post 'cart/clear'
   
-  get "about/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root :to => 'catalog#index'
    
-   match 'catalog' => 'catalog#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   
-  #Redirect About
-  match 'about' => 'about#index'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
