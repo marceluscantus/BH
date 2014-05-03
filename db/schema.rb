@@ -52,4 +52,29 @@ ActiveRecord::Schema.define(:version => 20140422083618) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "order_items", :force => true do |t|
+    t.integer  "glasses_id"
+    t.integer  "order_id"
+    t.float    "price"
+    t.integer  "amount"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "email"
+    t.string   "phone_number"
+    t.string   "ship_to_first_name"
+    t.string   "ship_to_last_name"
+    t.string   "ship_to_address"
+    t.string   "ship_to_city"
+    t.string   "ship_to_postal_code"
+    t.string   "ship_to_country_code"
+    t.string   "customer_ip"
+    t.string   "status"
+    t.string   "error_message"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
 end

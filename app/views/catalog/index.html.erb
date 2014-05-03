@@ -1,2 +1,2 @@
-<%=link_to 'Últimos modelos', :action => 'latest' %></br>
+<%=link_to 'Últimos modelos', :action => 'latest' %><br>
 <%= render :partial => 'glasses' %> <%= will_paginate @glasses, :page_links => false, :link_separator => ' | ', :previous_label => 'Página anterior', :next_label => 'Página siguiente' %>

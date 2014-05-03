@@ -16,7 +16,8 @@ class Glasses < ActiveRecord::Base
 	:convert_options => {
 		:thumb    => '-set colorspace sRGB -strip',
 		:large    => '-set colorspace sRGB -strip',
-	}
+	},
+  :default_url => '/images/:style/missing.png'
 
   validates_presence_of :glasses_name
   validates_numericality_of :price

@@ -2,18 +2,18 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class GlassesTest < ActionDispatch::IntegrationTest
   test "glasses_administration" do
-    manufacturer = Manufacturer.create(:company_name => 'Otoole')
+    manufacturer = Manufacturer.find(1)
+    puts manufacturer.name
     george = new_session_as(:george)
-    puts manufacturer.id
     new_glasses_ruby = george.add_glasses :glasses => {
-      :glasses_name => 'New Melon model',
-      :price => 23.15,
+      :glasses_name => 'New Radial',
+      :price => 45,
       :manufacturer_id => manufacturer.id
   }
-    puts new_glasses_ruby
+   puts new_glasses_ruby
     george.list_glasses
     george.show_glasses new_glasses_ruby
-
+puts new_glasses_ruby
     george.edit_glasses new_glasses_ruby, :glasses => {
       :glasses_name => 'Super New Melon model',
       :manufacturer_id => manufacturer.id,
@@ -37,6 +37,7 @@ class GlassesTest < ActionDispatch::IntegrationTest
       assert_template 'admin/glasses/new'
       assert_tag :tag => 'option', :attributes => { :value => manufacturer.id }
       post 'admin/glasses/create', parameters
+      puts parameters
       assert_response :redirect
       follow_redirect!
       assert_response :success
@@ -60,13 +61,14 @@ class GlassesTest < ActionDispatch::IntegrationTest
     end
 
     def delete_glasses(glasses)
-      post "admin/book/destroy?id=#{glasses.id}"
+      post "admin/glasses/destroy?id=#{glasses.id}"
       assert_response :redirect
       follow_redirect!
       assert_template 'admin/glasses/index'
     end
 
     def show_glasses(glasses)
+    	puts glasses
       get "admin/glasses/show/#{glasses.id}"
       assert_response :success
       assert_template 'admin/glasses/show'

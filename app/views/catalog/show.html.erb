@@ -1,9 +1,9 @@
-</br><% if @glasses.image.exists? then %>
+<br><% if @glasses.image.exists? then %>
     <dd><%= image_tag @glasses.image.url(:large) %></dd>
   <% else %>
     <p>Imagen no disponible.</p>
 <% end %>
-</br><dl>
+<br><dl>
   <dt>Nombre</dt>
   <dd><%= @glasses.name %></dd>
   <dt>Precio</dt>
