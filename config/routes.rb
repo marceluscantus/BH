@@ -42,7 +42,7 @@ BH::Application.routes.draw do
   post 'checkout/submit_order'
   get 'checkout/thank_you'
 
-  get 'user_session/new'
+  get 'user/new'
   post 'user/create'
   get 'user/show'
   match 'user/show/:id' => 'user#show'
