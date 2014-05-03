@@ -41,6 +41,14 @@ BH::Application.routes.draw do
   get 'checkout/index'
   post 'checkout/submit_order'
   get 'checkout/thank_you'
+
+  get 'user_session/new'
+  post 'user/create'
+  get 'user/show'
+  match 'user/show/:id' => 'user#show'
+  get 'user/edit'
+  post 'user/update'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

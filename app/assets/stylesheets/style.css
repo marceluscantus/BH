@@ -31,9 +31,19 @@
   top: 0;
   left: 10px;
 }
+
+#loginout {
+  background: #ccc;
+  padding: 8px;
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
 body {
   background-color: #fff; color: #333;
 }
+
 #checkout fieldset {
   border-top: 1px solid #efefef;
   border-bottom: 1px solid #ccc;

@@ -44,7 +44,8 @@ class Admin::ManufacturerController < ApplicationController
   end
 
   def index
-       @manufacturers = Manufacturer.find(:all)
-       @page_title = 'Listando Fabricantes'
+      sorter_by = params[:sort_by]
+      @manufacturers    = Manufacturer.paginate :page => params[:page], :order => sorter_by, :per_page => 5
+      @page_title = 'Listando Fabricantes'
   end
 end

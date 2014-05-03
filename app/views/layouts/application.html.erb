@@ -62,6 +62,25 @@
       </div>
     </div>
     
+    <header>
+    <h1 id="logo">BlackHole&trade;</h1>
+    <h2 id="slogan">High quality Sunglasses</h2>
+    <p id="loginout">
+      <% if current_user %>
+        Logged in as <%=current_user.login %>
+        (<%=link_to "Edit account", :controller => '/user', :action => :show %>)
+        <br/>
+        (<%= link_to "Logout", :controller => '/user_session', :action => :destroy %>)
+      <% else %>
+        <% if User.count == 0 %>
+          (<%= link_to "Create new account", :controller => '/user', :action => :new %>)
+        <% else %>
+          (<%= link_to "Login", :controller => '/user_session', :action => :new %>)
+        <% end %>
+      <% end %>
+    </p>
+  </header>
+  
     <div class="container centro">
       <div class="row">
         <div class="col-lg-9">
