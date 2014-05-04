@@ -15,21 +15,21 @@ class CheckoutTest < ActionDispatch::IntegrationTest
     post '/cart/add', :id => 1
     get '/checkout'
     assert_response :success
-    assert_tag :tag => 'legend', :content => 'Contact Information'
-    assert_tag :tag => 'legend', :content => 'Shipping Address'
-    assert_tag :tag => 'legend', :content => 'Billing Information'
+    assert_tag :tag => 'legend', :content => 'Información de contacto'
+    assert_tag :tag => 'legend', :content => 'Dirección de envío'
+    assert_tag :tag => 'legend', :content => 'Información de pago'
 
     post '/checkout/submit_order', :cart => { :id => Cart.last.id }, :order => {
       # Contact information
       :email => 'email@email.com',
       :phone_number => '666112233',
       # Shipping address
-      :ship_to_first_name => 'Firstname',
-      :ship_to_last_name => 'Lastname',
-      :ship_to_address => 'Address',
-      :ship_to_city => 'City',
+      :ship_to_first_name => 'Nombre',
+      :ship_to_last_name => 'Apellidos',
+      :ship_to_address => 'Dirección',
+      :ship_to_city => 'Ciudad',
       :ship_to_postal_code => '00000',
-      :ship_to_country_code => 'Country',
+      :ship_to_country_code => 'País',
       # Billing information
       :card_type => 'Visa',
       :card_number => '4007000000027',

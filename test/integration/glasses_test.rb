@@ -2,7 +2,7 @@ require File.dirname(__FILE__) + '/../test_helper'
 
 class GlassesTest < ActionDispatch::IntegrationTest
   test "glasses_administration" do
-    manufacturer = Manufacturer.find(1)
+    manufacturer = Manufacturer.create(:company_name => 'Fabricante')
     puts manufacturer.name
     george = new_session_as(:george)
     new_glasses_ruby = george.add_glasses :glasses => {
@@ -10,10 +10,9 @@ class GlassesTest < ActionDispatch::IntegrationTest
       :price => 45,
       :manufacturer_id => manufacturer.id
   }
-   puts new_glasses_ruby
     george.list_glasses
-    george.show_glasses new_glasses_ruby
-puts new_glasses_ruby
+    george.show_glasses(new_glasses_ruby)
+
     george.edit_glasses new_glasses_ruby, :glasses => {
       :glasses_name => 'Super New Melon model',
       :manufacturer_id => manufacturer.id,
@@ -37,15 +36,14 @@ puts new_glasses_ruby
       assert_template 'admin/glasses/new'
       assert_tag :tag => 'option', :attributes => { :value => manufacturer.id }
       post 'admin/glasses/create', parameters
-      puts parameters
       assert_response :redirect
       follow_redirect!
       assert_response :success
       assert_template 'admin/glasses/index'
       page = Glasses.find(:all).count / 5 + 1
       get "admin/glasses/index/?page=#{page}"
-      assert_tag :tag => 'td', :content => parameters[:glasses][:name]
-      glasses = Glasses.find_by_glasses_name(parameters[:glasses][:name])
+      assert_tag :tag => 'td', :content => parameters[:glasses][:glasses_name]
+      glasses = Glasses.find_by_glasses_name(parameters[:glasses][:glasses_name])
       return glasses;
     end
 
@@ -67,9 +65,8 @@ puts new_glasses_ruby
       assert_template 'admin/glasses/index'
     end
 
-    def show_glasses(glasses)
-    	puts glasses
-      get "admin/glasses/show/#{glasses.id}"
+    def show_glasses(glass)
+      get "admin/glasses/show/#{glass.id}"
       assert_response :success
       assert_template 'admin/glasses/show'
     end
