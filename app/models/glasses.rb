@@ -5,6 +5,9 @@ class Glasses < ActiveRecord::Base
   has_many :carts, :through => :cart_items
   belongs_to :manufacturer
 
+  #Buscador ferret
+  acts_as_ferret :fields => [:glasses_name, :price]
+
   #PaperClip
   has_attached_file :image, 
 	:path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",

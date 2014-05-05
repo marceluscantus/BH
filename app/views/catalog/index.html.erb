@@ -1,2 +1,3 @@
-<%=link_to 'Últimos modelos', :action => 'latest' %><br>
-<%= render :partial => 'glasses' %> <%= will_paginate @glasses, renderer: BootstrapPagination::Rails %>
+<%= link_to "Buscar", :action => "search" %> | 
+<%= link_to 'Ultimos modelos', :action => 'latest' %>
+<%= render :partial => 'glasses' %> <%= will_paginate @glasses, :page_links => false, :link_separator => ' | ', :previous_label => 'Previous page', :next_label => 'Next page' %>

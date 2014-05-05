@@ -30,6 +30,8 @@ BH::Application.routes.draw do
   match 'catalog/show/:id' => 'catalog#show'
   get 'catalog/index'
   get 'catalog/latest'
+  get 'catalog/search'
+  match 'catalog/search/:q' => 'catalog/search#search'
   
   get 'cart/add'
   post 'cart/add'

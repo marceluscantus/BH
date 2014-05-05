@@ -3,7 +3,6 @@ class CatalogController < ApplicationController
   before_filter :initialize_cart
   before_filter :except => [:show, :latest]
 
-
   def show
     @glasses = Glasses.find(params[:id])
     @page_title = @glasses.name
@@ -18,4 +17,17 @@ class CatalogController < ApplicationController
     @glasses = Glasses.latest 5 # invoca al metodo "lastest" para sacar los cinco ultimos libros
     @page_title = "Últimos modelos"
   end
+
+  def search
+    @page_title = "Buscar"
+    
+    if params[:commit] == "Buscar" || params[:q]
+      @glasses = Glasses.find_with_ferret(params[:q].to_s.upcase)
+
+      unless @glasses.size > 0
+        flash.now[:notice] = "No se encontraron resultados."
+      end
+    end
+  end
+
 end
