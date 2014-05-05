@@ -1,0 +1,35 @@
+<% if @user.errors.any? %>
+  <div id="errorExplanation">
+  <h2><%= pluralize(@entity.errors.count, "error", "errores") %> impiden que la cuenta se cree en el sistema:</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <p><label for="user_name">Nombre</label><br/>
+  <%= text_field 'user', 'name' %></p>
+</div>
+
+<div class="field">
+  <p><label for="user_login">Cuenta de usuario</label><br/>
+  <%= text_field 'user', 'login' %></p>
+</div>
+
+<div class="field">
+  <p><label for="user_email">Dirección de correo electrónico</label><br/>
+  <%= text_field 'user', 'email' %></p>
+</div>
+
+<div class="field">
+  <p><label for="user_password">Clave de acceso</label><br/>
+  <%= password_field 'user', 'password' %></p>
+</div>
+
+<div class="field">
+  <p><label for="user_password_confirmation">Confirmación de clave de acceso</label><br/>
+  <%= password_field 'user', 'password_confirmation' %></p>
+</div>

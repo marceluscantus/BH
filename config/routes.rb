@@ -7,7 +7,8 @@ BH::Application.routes.draw do
   match 'about' => 'about#index'  
   match 'checkout' => 'checkout#index'
   match 'admin/manufacturer' => 'admin/manufacturer#index'
-  
+  match 'admin/order' => 'admin/order#index'
+
   get 'admin/manufacturer/new'
   post 'admin/manufacturer/create'
   get 'admin/manufacturer/edit'
@@ -40,9 +41,18 @@ BH::Application.routes.draw do
   get 'cart/clear'
   post 'cart/clear'
   
+  post 'admin/order/close'
+  get 'admin/order/show'
+  match 'admin/order/show/:id' => 'admin/order#show'
+  get 'admin/order/index'
+
   get 'checkout/index'
   post 'checkout/submit_order'
   get 'checkout/thank_you'
+
+  get 'user_session/new'
+  post 'user_session/create'
+  get 'user_session/destroy'
 
   get 'user/new'
   post 'user/create'

@@ -1,0 +1,25 @@
+<% if @user_session.errors.any? %>
+  <div id="errorExplanation">
+  <h2><%= pluralize(@user_session.errors.count, "error", "errores") %> impiden al usuario su acceso identificado:</h2>
+    <ul>
+      <% @user_session.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field">
+  <p><label for="login">Cuenta de usuario</label><br/>
+  <%= text_field 'user_session', 'login' %></p>
+</div>
+
+<div class="field">
+  <p><label for="password">Clave de acceso</label><br/>
+  <%= password_field 'user_session', 'password' %></p>
+</div>
+
+<!-- <div class="check_box">
+  <p><label for="remember_me">Remember me</label><br/>
+  <%= check_box 'user_session', 'remember_me' %></p>
+</div> -->

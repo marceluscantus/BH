@@ -1,0 +1,35 @@
+<dl>
+  <dt>Nombre</dt>
+  <dd><%= @user.name %></dd>
+
+  <dt>Cuenta de usuario</dt>
+  <dd><%= @user.login %></dd>
+
+  <dt>Dirección de correo electrónico</dt>
+  <dd><%= @user.email %></dd>
+
+  <dt>Número de sesiones</dt>
+  <dd><%= @user.login_count %></dd>
+
+  <dt>Última petición al sistema</dt>
+  <dd><%= @user.last_request_at %></dd>
+
+  <% if @user.last_login_at %>
+    <dt>Inicio de la última sesión</dt>
+    <dd><%= @user.last_login_at %></dd>
+  <% end %>
+
+  <dt>Inicio de la sesión actual</dt>
+  <dd><%= @user.current_login_at %></dd>
+
+  <% if @user.last_login_ip %>
+    <dt>Dirección IP de la última sesión</dt>
+    <dd><%= @user.last_login_ip %></dd>
+  <% end %>
+
+  <dt>Dirección IP de la sesión actual</dt>
+  <dd><%= @user.current_login_ip %></dd>
+</dl>
+
+<%= link_to 'Editar', :action => 'edit' %>
+<%= link_to 'Atrás', :controller => 'entity', :action => 'index' %>

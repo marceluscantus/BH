@@ -51,7 +51,7 @@
         </button>
         <a class="navbar-brand" href="/">BlackHole</a>
           <strong class="navbar-brand">High quality Sunglasses</strong>
-        <div class="nav-collapse collapse navbar-responsive-collapse">
+        <div class="nav-collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Fabricantes", "/admin/manufacturer"  %></li>
             <li><%= link_to "Gafas", "/admin/glasses"  %></li>
@@ -68,14 +68,14 @@
     <p id="loginout">
       <% if current_user %>
         Logged in as <%=current_user.login %>
-        (<%=link_to "Edit account", :controller => '/user', :action => :show %>)
+        (<%=link_to "Editar cuenta", :controller => '/user', :action => :show %>)
         <br/>
-        (<%= link_to "Logout", :controller => '/user_session', :action => :destroy %>)
+        (<%= link_to "Cerrar sesión", :controller => '/user_session', :action => :destroy %>)
       <% else %>
         <% if User.count == 0 %>
-          (<%= link_to "Create new account", :controller => '/user', :action => :new %>)
+          (<%= link_to "Crear nueva cuenta", :controller => '/user', :action => :new %>)
         <% else %>
-          (<%= link_to "Login", :controller => '/user_session', :action => :new %>)
+          (<%= link_to "Iniciar sesión", :controller => '/user_session', :action => :new %>)
         <% end %>
       <% end %>
     </p>
@@ -93,18 +93,7 @@
           </div>
           <% end %>
         </div>
-        <div class="col-lg-1">
-          <div class="sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li><%= link_to "Fabricantes", "/admin/manufacturer"  %></li>
-              <li><%= link_to "Gafas", "/admin/glasses"  %></li>
-              <li><%= link_to "Pedidos", "/admin/order"  %></li>
-              <li><%= link_to "Catálogo", "/catalog"  %></li>
-              <li><%= link_to "About", "/about"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+      
       </div><!--/row-->
 
       <footer>
