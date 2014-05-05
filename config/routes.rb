@@ -44,6 +44,10 @@ BH::Application.routes.draw do
   post 'checkout/submit_order'
   get 'checkout/thank_you'
 
+  get 'user_session/new'
+  post 'user_session/create'
+  get 'user_session/destroy'
+
   get 'user/new'
   post 'user/create'
   get 'user/show'
