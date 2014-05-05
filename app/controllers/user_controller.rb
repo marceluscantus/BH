@@ -26,15 +26,15 @@ class UserController < ApplicationController
 
   def edit
     @user = current_user
-    @page_title = 'Edit account'
+    @page_title = 'Editar cuenta'
   end
 
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account #{@user.name} was succesfully updated."
+      flash[:notice] = "La cuenta #{@user.name} fue modificada."
     else
-      @page_title = 'Edit account'
+      @page_title = 'Editar cuenta'
       render :action => 'edit'
     end
   end
