@@ -1,4 +1,4 @@
-class Admin::GlassesController < AuthenticatedController
+class Admin::GlassesController < Admin::AuthenticatedController
   def new
     load_data
     @glasses    = Glasses.new

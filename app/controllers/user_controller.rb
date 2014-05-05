@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class UserController < ApplicationController
   before_filter :require_user, :only => [:show, :edit, :update]
 

@@ -68,14 +68,14 @@
     <p id="loginout">
       <% if current_user %>
         Logged in as <%=current_user.login %>
-        (<%=link_to "Edit account", :controller => '/user', :action => :show %>)
+        (<%=link_to "Editar cuenta", :controller => '/user', :action => :show %>)
         <br/>
-        (<%= link_to "Logout", :controller => '/user_session', :action => :destroy %>)
+        (<%= link_to "Cerrar sesión", :controller => '/user_session', :action => :destroy %>)
       <% else %>
         <% if User.count == 0 %>
-          (<%= link_to "Create new account", :controller => '/user', :action => :new %>)
+          (<%= link_to "Crear nueva cuenta", :controller => '/user', :action => :new %>)
         <% else %>
-          (<%= link_to "Login", :controller => '/user_session', :action => :new %>)
+          (<%= link_to "Iniciar sesión", :controller => '/user_session', :action => :new %>)
         <% end %>
       <% end %>
     </p>
