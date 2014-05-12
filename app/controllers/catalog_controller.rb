@@ -23,7 +23,6 @@ class CatalogController < ApplicationController
     
     if params[:commit] == "Buscar" || params[:q]
       @glasses = Glasses.find_with_ferret(params[:q].to_s.upcase)
-
       unless @glasses.size > 0
         flash.now[:notice] = "No se encontraron resultados."
       end

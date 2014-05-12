@@ -51,6 +51,7 @@
         </button>
         <a class="navbar-brand" href="/">BlackHole</a>
           <strong class="navbar-brand">High quality Sunglasses</strong>
+        <% if current_user_session %>
         <div class="nav-collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Fabricantes", "/admin/manufacturer"  %></li>
@@ -60,6 +61,16 @@
             <li><%= link_to "About", "/about"  %></li>
           </ul>
         </div>
+        <% else %>
+        <div class="nav-collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            
+            <li><%= link_to "Catálogo", "/catalog"  %></li>
+            <li><%= link_to "About", "/about"  %></li>
+          </ul>
+        </div>
+        <% end %>
+
       </div>
     </div>
     
