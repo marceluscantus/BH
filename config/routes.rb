@@ -45,6 +45,7 @@ BH::Application.routes.draw do
   get 'admin/order/show'
   match 'admin/order/show/:id' => 'admin/order#show'
   get 'admin/order/index'
+  post 'admin/order/destroy'
 
   get 'checkout/index'
   post 'checkout/submit_order'

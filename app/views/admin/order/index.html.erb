@@ -20,6 +20,9 @@
       <td align="center"><%= order.created_at.strftime("%d-%m-%Y %I:%M") %></td>
       <td align="center"><%= order.updated_at.strftime("%d-%m-%Y %I:%M") %></td>
       <td><%= link_to 'Mostrar', :action => 'show', :id => order %></td>
+      <td>
+    <%= button_to 'Borrar', {:action => 'destroy', :id => order}, :confirm => "¿Está seguro que desea eliminar el pedido número #{order.id}?" %>
+  </td>
     </tr>
   <% end %>
   </table>
@@ -29,8 +32,7 @@
     <%= 'Ver página:' %>
   <% end %>
 
-  <%= will_paginate @orders, :page_links => true, :link_separator => ' ', :container => false,
-                             :previous_label => '', :next_label => '' %>
+  <%= will_paginate @orders, renderer: BootstrapPagination::Rails %>
   <p></p>
 <% end %>
 

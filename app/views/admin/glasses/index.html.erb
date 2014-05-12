@@ -8,5 +8,5 @@
 
   <%= render :partial => 'glasses', :collection => @glasses %>
 </table>
-<%= will_paginate @glasses, render: BootstrapPagination::Rails%><br>
+<%= will_paginate @glasses, renderer: BootstrapPagination::Rails %><br>
 <p><%= link_to 'Añade unas nuevas Gafas', :action => 'new' %></p>

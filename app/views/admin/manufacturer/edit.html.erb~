@@ -1,7 +1,0 @@
-<%= form_for admin_manufacturer_path, :id => @manufacturer do %>
-  <%= render :partial => 'form' %>
-  <%= submit_tag 'Actualizar Fabricante' %>
-<% end %>
-
-<%= link_to 'Mostrar', :action => 'show', :id => @manufacturer %> |
-<%= link_to 'Atrás', :action => 'index' %>
