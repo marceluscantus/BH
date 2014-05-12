@@ -35,6 +35,7 @@ class UserController < ApplicationController
     @user = current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "La cuenta #{@user.name} fue modificada."
+      redirect_to :action => 'show'
     else
       @page_title = 'Editar cuenta'
       render :action => 'edit'
