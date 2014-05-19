@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
     a.require_password_confirmation = true
     a.logged_in_timeout = 10.minutes # default is 10.minutes
   end
-
+  has_many :topics, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
   attr_accessible :name, :login, :email, :password, :password_confirmation
   validates_presence_of :name, :login, :email, :password, :password_confirmation
   validates_length_of :name, :in => 3..225

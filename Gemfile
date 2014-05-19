@@ -47,6 +47,9 @@ gem 'ferret'
 
 gem 'acts_as_ferret', '>= 0.5'
 
+gem 'forum_monster'
+
+gem 'rails_autolink', '~> 1.1.5'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
