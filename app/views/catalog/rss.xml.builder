@@ -11,7 +11,7 @@ xml.rss("version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/") do
 		for glass in @glasses
 			xml.item do
 				xml.title(glass.name)
-				xml.description("#{glass.name} by #{glass.manufacturer}")
+				xml.description("#{glass.description}")
 				xml.pubDate(glass.created_at.to_s(:long))
 				xml.guid(url_for(:action => "show", :id => glass, :only_path => false))
 				xml.link(url_for(:action => "show", :id => glass, :only_path => false))
