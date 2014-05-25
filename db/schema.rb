@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140517095714) do
+ActiveRecord::Schema.define(:version => 20140525094833) do
 
   create_table "cart_items", :force => true do |t|
     t.integer  "glasses_id"
@@ -138,5 +138,8 @@ ActiveRecord::Schema.define(:version => 20140517095714) do
     t.integer  "topics_count",       :default => 0
     t.integer  "posts_count",        :default => 0
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

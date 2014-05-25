@@ -18,7 +18,9 @@
   <p><label for="password">Clave de acceso</label><br/>
   <%= password_field 'user_session', 'password' %></p>
 </div>
-
+<div class="field">
+  <p><%= link_to "Olvidó su contraseña?", new_password_reset_path %></p>
+</div>
 <!-- <div class="check_box">
   <p><label for="remember_me">Remember me</label><br/>
   <%= check_box 'user_session', 'remember_me' %></p>
