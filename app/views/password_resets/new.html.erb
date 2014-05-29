@@ -1,0 +1,8 @@
+<h1>Recuperar Contraseña</h1>
+
+<p>Por favor, introduzca su dirección de correo abajo y entonces presione "Recuperar Contraseña".</p>
+
+<%= form_tag password_resets_path do %>
+  <%= text_field_tag :email %>
+  <%= submit_tag "Recuperar Contraseña" %>
+<% end %>
