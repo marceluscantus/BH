@@ -50,6 +50,9 @@ gem 'acts_as_ferret', '>= 0.5'
 gem 'forum_monster'
 
 gem 'rails_autolink', '~> 1.1.5'
+
+gem 'make_like_a_tree'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140525094833) do
+ActiveRecord::Schema.define(:version => 20140526161331) do
 
   create_table "cart_items", :force => true do |t|
     t.integer  "glasses_id"
@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(:version => 20140525094833) do
     t.integer  "position",   :default => 0
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "forum_posts", :force => true do |t|
+    t.string   "name",       :limit => 50,                :null => false
+    t.string   "subject",                                 :null => false
+    t.text     "body"
+    t.integer  "root_id",                  :default => 0, :null => false
+    t.integer  "parent_id",                :default => 0, :null => false
+    t.integer  "lft",                      :default => 0, :null => false
+    t.integer  "rgt",                      :default => 0, :null => false
+    t.integer  "depth",                    :default => 0, :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
   end
 
   create_table "forums", :force => true do |t|

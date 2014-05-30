@@ -83,6 +83,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    make_like_a_tree (1.0.3)
     mime-types (1.23)
     money (5.1.1)
       i18n (~> 0.6.0)
@@ -167,6 +168,7 @@ DEPENDENCIES
   forum_monster
   jquery-rails (= 3.1.0)
   json (= 1.7.5)
+  make_like_a_tree
   mysql2 (= 0.3.11)
   paperclip (= 3.3.1)
   rails (= 3.2.9)

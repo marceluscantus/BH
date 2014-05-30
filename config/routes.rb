@@ -1,5 +1,7 @@
 BH::Application.routes.draw do
 
+ 
+
   root :to => 'catalog#index'
 
   match 'catalog' => 'catalog#index'
@@ -8,7 +10,8 @@ BH::Application.routes.draw do
   match 'checkout' => 'checkout#index'
   match 'admin/manufacturer' => 'admin/manufacturer#index'
   match 'admin/order' => 'admin/order#index'
-
+  match 'forum' => 'forum#index'
+  
   get 'admin/manufacturer/new'
   post 'admin/manufacturer/create'
   get 'admin/manufacturer/edit'
@@ -71,6 +74,17 @@ BH::Application.routes.draw do
     end
     root :to => 'categories#index', :via => :get
   end
+  get "forum/index"
+  get "forum/reply"
+  match 'forum/reply/:id'  => 'forum#reply'
+  get "forum/show"
+  get "forum/list"
+  match 'forum/show/:id' => 'forum#show'
+  get "forum/post"
+  post "forum/create"
+  match 'forum/create/:id' => 'forum#create'
+  get 'forum/destroy'
+  match 'forum/destroy/:id' => 'forum#destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

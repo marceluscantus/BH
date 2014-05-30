@@ -1,0 +1,10 @@
+<% if @posts.size > 0 %>
+<div><%= link_to 'New post' , :action => 'post' %></div>
+<p>
+<%= display_like_a_tree @posts %>
+</p>
+<% else %>
+There are no posts yet. <%= link_to 'Be the first one to post here' , :action => 'post' %>
+<% end %>
+<br/>
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>

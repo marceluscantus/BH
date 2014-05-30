@@ -5,5 +5,23 @@ radial_1:
   manufacturer_id: 1
   created_at: <%= Time.now.strftime("%Y-%m-%d") %>
   updated_at: <%= Time.now.strftime("%Y-%m-%d") %> 
+radical_1:
+  id: 2
+  glasses_name: Radical
+  price: 25.0
+  manufacturer_id: 2
+  created_at: <%= Time.now.strftime("%Y-%m-%d") %>
+  updated_at: <%= Time.now.strftime("%Y-%m-%d") %> 
+radian_1:
+  id: 3
+  glasses_name: Radian
+  price: 35.0
+  manufacturer_id: 3
+  created_at: <%= Time.now.strftime("%Y-%m-%d") %>
+  updated_at: <%= Time.now.strftime("%Y-%m-%d") %> 
+
+
+
+
 
 
