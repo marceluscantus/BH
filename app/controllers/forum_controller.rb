@@ -28,8 +28,14 @@ class ForumController < ApplicationController
       flash[:notice] = 'Post was successfully created.'
       redirect_to :action => 'index'
     else
-      @page_title = 'Post to forum'
-      render :action => 'post'
+      if @post.parent_id != 0
+        reply_to = ForumPost.find(@post.parent_id)
+        @page_title = "Reply to '#{reply_to.subject}'"
+        render :action => 'post'
+      else
+        @page_title = 'Post to forum'
+        render :action => 'post'
+      end
     end
   end
   def destroy
