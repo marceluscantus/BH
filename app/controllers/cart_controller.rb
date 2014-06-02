@@ -9,7 +9,7 @@ class CartController < ApplicationController
     if request.xhr?
       @item = @cart.add params[:id]
       flash.now[:cart_notice] = "Añadido <em>#{@item.glasses.name}</em>"
-      #render :action => "add_with_ajax"
+      render :action => "add_with_ajax"
     elsif request.post?
       @item = @cart.add(params[:id])
       flash[:cart_notice] = "Added <em>#{@item.glasses.name}</em>.".html_safe
@@ -26,7 +26,7 @@ class CartController < ApplicationController
     if request.xhr?
       @item = @cart.remove params[:id]
       flash.now[:cart_notice] = "Eliminado <em>#{@item.glasses.name}</em>"
-      #render :action => "remove_with_ajax"
+      render :action => "remove_with_ajax"
     elsif request.post?
       @item = @cart.remove params[:id]
       flash[:cart_notice] = "Removed 1 <em>#{@item.glasses.name}</em>.".html_safe

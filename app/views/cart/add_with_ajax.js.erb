@@ -1,0 +1,7 @@
+jQuery.noConflict();
+
+jQuery('#shopping_cart').html("<%= j render :partial => 'cart/cart' %>");
+
+jQuery("#cart_item_<%= @item.glasses.id %>").css({'background:color':'#7EF'}).animate({'background-color':'#DEF'}, 3000);
+
+jQuery('#cart_notice').hide('fade', {}, 3000);
