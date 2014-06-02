@@ -6,7 +6,7 @@ class Glasses < ActiveRecord::Base
   belongs_to :manufacturer
 
   #Buscador ferret
-  acts_as_ferret :fields => [:glasses_name, :price]
+  acts_as_ferret :fields => [:glasses_name, :description]
 
   #PaperClip
   has_attached_file :image, 

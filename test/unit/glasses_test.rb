@@ -36,4 +36,19 @@ class GlassesTest < ActiveSupport::TestCase
     assert_equal 'Arnette', glasses.manufacturer.name
   end
 
+  def test_ferret
+      #Glasses.rebuild_index
+      #assert Glasses.find_with_ferrets("Radial")
+      
+      #assert_difference Glasses, :count do
+        #glasses = Glasses.new(:glasses_name => 'V8', :price => 59.99)
+        #glasses.manufacturer_id << Manufacturer.create(:company_name => "D&G", :city => "Manhatan", :telephone => 934567890, :mail => "contact@dandg.com", :address => "Avenue SunGlasses 1")
+        #glasses.manufacturer_id = Manufacturer.find(1)
+        #assert glasses.valid?
+        #glasses.save
+        #assert_equal 1, Glasses.find_with_ferrets("v8").size
+        #assert_equal 1, Glasses.find_with_ferrets("D&G").size
+      #end
+  end
+
 end

@@ -11,6 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//require jquery_ujs
+//= require prototype
+//= require prototype_ujs
+//= require effects
+//= require dragdrop
+//= require controls
 //= require twitter/bootstrap
 //= require_tree .
