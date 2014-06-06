@@ -66,14 +66,6 @@ BH::Application.routes.draw do
   get 'user/edit'
   post 'user/update'
 
-  resources :password_resets
-  resources :categories, :except => [:index, :show]
-  resources :forums, :except => :index do
-    resources :topics, :shallow => true, :except => :index do
-      resources :posts, :shallow => true, :except => [:index, :show]
-    end
-    root :to => 'categories#index', :via => :get
-  end
   get "forum/index"
   get "forum/reply"
   match 'forum/reply/:id'  => 'forum#reply'
