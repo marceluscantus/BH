@@ -1,6 +1,6 @@
 BH::Application.routes.draw do
 
- 
+ resources :password_resets
 
   root :to => 'catalog#index'
 
