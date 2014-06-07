@@ -36,7 +36,7 @@
     <p><label for="order_ship_to_postal_code">Código Postal</label><br/>
     <%= text_field :order, :ship_to_postal_code %></p>
     <p><label for="order_ship_to_country_code">País</label><br/>
-    <%= country_select(:order, :ship_to_country_code, ['Spain']) %></p>
+    <%= country_select(:order, :ship_to_country_code, ['Spain'], {},:style=>'width:100px;') %></p>
   </fieldset>
 
   <fieldset>
