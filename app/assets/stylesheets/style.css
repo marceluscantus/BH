@@ -1,3 +1,9 @@
+#carro {padding-top:25px;}
+#carro ul {padding:5px;}
+#carro li {font-size:12px;}
+#carro li a {display:inline;padding:0;}
+
+
 .centro{
   margin-left: 2%;
 }

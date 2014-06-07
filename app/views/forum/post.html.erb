@@ -3,12 +3,18 @@
      <% flash.now[:error] = @post.errors.full_messages.join(', and ') %>
   <% end %>
   <%= hidden_field :post, :parent_id %>
-  <p><label for="post_name">Name</label><br/>
-  <%= text_field 'post', 'name' %></p>
-  <p><label for="post_subject">Subject</label><br/>
-  <%= text_field 'post', 'subject' %></p>
-  <p><label for="post_body">Body</label><br/>
-  <%= text_area 'post', 'body' %></p>
 
-  <%= submit_tag "Post" %>
+  <div class="form-group">
+    <label for="post_name">Nombre</label>
+    <%= text_field 'post', 'name', :class => "form-control", :placeholder => "Nombre", :required => "required" %>
+  </div>
+  <div class="form-group">
+    <label for="post_subject">Título</label>
+    <%= text_field 'post', 'subject', :class => "form-control", :placeholder => "Título", :required => "required" %>
+  </div>
+  <div class="form-group">
+    <label for="post_body">Descripción</label>
+    <%= text_area 'post', 'body', :class => "form-control", :placeholder => "Descripción", :required => "required" %>
+  </div>
+  <%= button_tag "Enviar", :class => "btn btn-primary" %>
   <% end %>

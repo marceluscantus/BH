@@ -1,26 +1,29 @@
 <% if flash[:cart_notice] %>
-<%= render :partial => 'cart/cart_notice' %>
+<script>
+jQuery.noConflict();
+jQuery('#carro').after('<div style="position:absolute;margin:5px" class="alert alert-success"><button class="close" aria-hidden="true" data-dismiss="alert" type="button">&times;</button> <%= flash[:cart_notice] %></div>');
+</script>
 <% end %>
 
-<h3>Su Carro de la Compra</h3>
-<p>
-  <strong>
-    <% unless controller.controller_name == 'checkout' %>
-      <%= link_to 'Procesar Compra', :controller => 'checkout' %>
-    <% end %>
-  </strong>
-</p>
-<ul>
   <% for item in @cart.cart_items %>
     <li id="cart_item_<%= item.glasses.id %>">
       <%= render :partial => 'cart/item', :object => item %>
     </li>
   <% end %>
-</ul>
-<p id='cart_total'><strong>Total: <%= sprintf "%0.2f €", @cart.total %></strong></p>
+  <li class="divider"></li>
+  <p id="cart_total">
+    <strong>
+      Total: <%= sprintf "%0.2f €", @cart.total %>
+    </strong>
+  </p>
 <% unless @cart.cart_items.empty? %>
-  <p id='clear_cart_link'>
-  	<!-- <b><%= link_to 'Vaciar Carro', :controller => 'cart', :action => 'clear' %></b> -->
-  	<%= clear_cart_link "Vaciar carrito" %>
+  <li class="divider"></li>
+  <p id="clear_cart_link">
+    <!-- <b><%= link_to 'Vaciar Carro', :controller => 'cart', :action => 'clear' %></b> -->
+    <%= clear_cart_link "Vaciar carrito" %>
   </p>
 <% end %>
+  <% unless controller.controller_name == 'checkout' %>
+    <li class="divider"></li>
+    <%= link_to 'Procesar Compra', :controller => 'checkout' %>
+  <% end %>

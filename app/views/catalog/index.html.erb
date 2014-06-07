@@ -1,3 +1,14 @@
-<%= render :partial => "search_box" %>
-<%= link_to 'Últimos modelos', :action => 'latest' %>
-<%= render :partial => 'glasses' %> <%= will_paginate @glasses, renderer: BootstrapPagination::Rails %>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render :partial => "search_box" %>
+  </div>
+  <div class="col-lg-3">
+    <p class="lead" style="margin-top:5px;">
+      <%= link_to 'Últimos modelos', :action => 'latest' %>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <%= render :partial => 'glasses' %>
+</div>
+<%= will_paginate @glasses, renderer: BootstrapPagination::Rails %>

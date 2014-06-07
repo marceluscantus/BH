@@ -34,7 +34,7 @@ class CatalogControllerTest < ActionController::TestCase
     cont = 1
     page = 1
     @glasses.each do |a|
-      assert_tag :tag => 'dt', :content => a.name
+      assert_tag :tag => 'div', :content => a.name
       cont = cont + 1
       if cont > 5 && page < pages  # go to next page
         page = page + 1
@@ -51,7 +51,7 @@ class CatalogControllerTest < ActionController::TestCase
     assert_tag 'h1', :content => 'Últimos modelos'
     @glasses = Glasses.latest 5
     @glasses.each do |a|
-      assert_tag :tag => 'dt', :content => a.name
+      assert_tag :tag => 'div', :content => a.name
     end
   end
 end

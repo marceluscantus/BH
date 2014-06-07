@@ -41,7 +41,7 @@ class ForumTest < ActionDispatch::IntegrationTest
       		assert_response :success
       		assert_template "forum/index"
       		assert_tag :tag => 'h1', :content => 'Forum'
-      		assert_tag :tag => 'a', :content => 'New post'
+      		assert_tag :tag => 'a', :content => 'Nuevo debate'
 		end
 		def view_post(post)
               get "/forum/show/#{post.id}"

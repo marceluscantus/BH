@@ -1,11 +1,18 @@
-<br><dl id = 'glasses'>
+<div id="glasses">
   <% for glasses in @glasses %>
-    <dt><%= link_to glasses.name, :action => 'show', :id => glasses %>
-    <!-- <%= link_to image_tag("cesta.png",  size: "30x30", alt: "Añadir al carro de la compra"), :controller => 'cart', :action => 'add', :id => glasses unless !@cart %></dt> -->
-    <br><dd><%= image_tag glasses.image.url(:thumb) %>
-    <pre style='display:inline'><strong><font color="green"> <%= sprintf("%.2f €", glasses.price) %> </font></strong></pre><br>
-    </dd><br>
-    <dd><%= add_glasses_link image_tag("cesta.png", class: "anadir-producto", size: "30x30", alt: "Añadir al carro de la compra"), glasses %></dd>
-    <dd><%= glasses.manufacturer.company_name %></dd><br>
+    <div class="glass col-xs-4 col-md-3" style="min-height:200px;width:150px;margin:30px 30px 30px 0;display:inline-block;vertical-align:top;">
+      <p class="glasses_name" style="font-size:2em;margin-bottom:0;">
+        <%= link_to glasses.name, :action => 'show', :id => glasses %>
+      </p>
+      <small><%= glasses.manufacturer.company_name %></small>
+      <!-- <%= link_to image_tag("cesta.png",  size: "30x30", alt: "Añadir al carro de la compra"), :controller => 'cart', :action => 'add', :id => glasses unless !@cart %> -->
+      <div style="padding:10px 0;height:100px;">
+        <%= link_to image_tag(glasses.image.url(:thumb), alt: ""), :action => 'show', :id => glasses %>
+      </div>
+      <span class="label label-success" style="cursor:default;">
+        <%= sprintf("%.2f €", glasses.price) %>
+      </span>
+      <%= add_glasses_link image_tag("cesta.png", class: "anadir-producto", size: "30x30", alt: "Añadir al carro de la compra"), glasses %>
+    </div>
   <% end %>
-</dl>
+</div>

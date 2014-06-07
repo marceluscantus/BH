@@ -1,17 +1,31 @@
-<br><% if @glasses.image.exists? then %>
-    <dd><%= image_tag @glasses.image.url(:large) %></dd>
+<span class="label label-success" style="cursor:default;">
+  <%= sprintf("%.2f €", @glasses.price) %>
+</span>
+<%= add_glasses_link image_tag("cesta.png", class: "anadir-producto", size: "30x30", alt: "Añadir al carro de la compra"), @glasses %>
+<hr>
+<% if @glasses.image.exists? then %>
+    <%= image_tag @glasses.image.url(:large) %>
   <% else %>
     <p>Imagen no disponible.</p>
 <% end %>
-<br><dl>
-  <dt>Nombre</dt>
-  <dd><%= @glasses.name %></dd>
-  <dt>Precio</dt>
-  <dd><%= sprintf("%0.2f", @glasses.price) %> €</dd>
-  <dt>Fabricante</dt>
-  <dd><%= @glasses.manufacturer.name %></dd>
-  <dt>Descripcion</dt>
-  <dd><%= @glasses.description %></dd>
-</dl>
-
-<p><%= link_to 'Catálogo', :action => 'index' %> </p>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>Nombre</td>
+      <td><%= @glasses.name %></td>
+    </tr>
+    <tr>
+      <td>Precio</td>
+      <td><%= sprintf("%0.2f", @glasses.price) %> €</td>
+    </tr>
+    <tr>
+      <td>Fabricante</td>
+      <td><%= @glasses.manufacturer.name %></td>
+    </tr>
+    <tr>
+      <td>Descripción</td>
+      <td><%= @glasses.description %></td>
+    </tr>
+  </tbody>
+</table>
+<%= link_to '← Volver al catálogo', :action => 'index' %>

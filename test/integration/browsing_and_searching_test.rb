@@ -20,9 +20,7 @@ class BrowsingAndSearchingTest < ActionDispatch::IntegrationTest
     def index
       get 'catalog/index'
       assert_response :success
-      assert_tag :tag => 'dl', :attributes => { :id => 'glasses' },
-                 :children => { :count => 1, :only => { :tag => 'dt' }}
-      assert_tag :tag => 'dt', :content => 'Radial'
+      assert_tag :tag => 'p', :content => 'Radial'
       check_glasses_links
     end
 
@@ -55,11 +53,9 @@ class BrowsingAndSearchingTest < ActionDispatch::IntegrationTest
     get 'catalog/latest'
     assert_response :success
     assert_template 'catalog/latest'
-    assert_tag :tag => 'dl', :attributes => { :id => 'glasses' },
-               :children => { :count => 1, :only => { :tag => 'dt' } }
     @glasses = Glasses.latest(5)
     @glasses.each do |a|
-      assert_tag :tag => 'dt', :content => a.glasses_name
+      assert_tag :tag => 'p', :content => a.glasses_name
     end
   end
 
