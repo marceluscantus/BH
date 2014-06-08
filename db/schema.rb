@@ -26,14 +26,6 @@ ActiveRecord::Schema.define(:version => 20140526161331) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "categories", :force => true do |t|
-    t.string   "title"
-    t.boolean  "state",      :default => true
-    t.integer  "position",   :default => 0
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
   create_table "forum_posts", :force => true do |t|
     t.string   "name",       :limit => 50,                :null => false
     t.string   "subject",                                 :null => false
@@ -47,22 +39,11 @@ ActiveRecord::Schema.define(:version => 20140526161331) do
     t.datetime "updated_at",                              :null => false
   end
 
-  create_table "forums", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.boolean  "state",        :default => true
-    t.integer  "topics_count", :default => 0
-    t.integer  "posts_count",  :default => 0
-    t.integer  "position",     :default => 0
-    t.integer  "category_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
   create_table "glasses", :force => true do |t|
     t.string   "glasses_name",       :null => false
     t.string   "description"
     t.float    "price"
+    t.string   "image"
     t.integer  "manufacturer_id",    :null => false
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
@@ -107,27 +88,6 @@ ActiveRecord::Schema.define(:version => 20140526161331) do
     t.string   "error_message"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-  end
-
-  create_table "posts", :force => true do |t|
-    t.text     "body"
-    t.integer  "forum_id"
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "topics", :force => true do |t|
-    t.string   "title"
-    t.integer  "hits",        :default => 0
-    t.boolean  "sticky",      :default => false
-    t.boolean  "locked",      :default => false
-    t.integer  "posts_count"
-    t.integer  "forum_id"
-    t.integer  "user_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
   end
 
   create_table "users", :force => true do |t|
